@@ -1,0 +1,20 @@
+
+<table class="infobox2">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of infoBox2Table.slice(start, end)">
+      <th scope="row" id="id">{{employee.id}}</th>
+      <td >{{employee.name}}</td>
+      <td>{{employee.last}}</td>
+      <td>{{employee.handle}}</td>
+    </tr>
+    
+  </tbody>
+</table>

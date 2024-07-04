@@ -52,19 +52,13 @@ padding: 10px;
 
 /*CARRY ALL OF THE POSITIONING RELATED COMPONENTS STYLES TO THIS FILE*/
 
-ix-application-header {
-    font-size: 19px;
-    font-weight: bold;
-}
-
 ix-menu {
     height: 100vh;
 }
 
 .breadcrumb {
-    padding: 10px;
-    padding-left: 50px;
-        
+    padding-top: 20%;
+    padding-right: 50%;    
 }
 
 .col-md-6 {

@@ -1,0 +1,14 @@
+.infobox6 {
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 100%;
+  items: 20px;
+  }
+.infobox6 .child {
+  margin-top: 10px;
+}
+.filter {
+  padding-left: 20px;
+  padding-top: 20px;
+  width: 75%;
+}

@@ -1,0 +1,25 @@
+<div class="example">
+  <ix-button
+    id="expand"
+    ghost
+    style="margin-bottom: 1rem"
+    (click)="expandAndSelect()">
+    Expand Tree
+  </ix-button>
+  <ix-tree
+    root="root"
+    [model]="model"
+    [context]="context"
+    [renderItem]="treeItem"> </ix-tree>
+  <ng-template #treeItem let-item>
+    <div class="align-items-center">
+      
+      <ix-icon [name]="item.icon" size="16" class="me-2"></ix-icon>
+      {{ item.name }}
+      <br>
+      <span class="desc">
+      {{ item.description ?? ''}}
+      </span>
+    </div>
+  </ng-template>
+</div>
