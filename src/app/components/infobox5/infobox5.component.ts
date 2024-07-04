@@ -17,6 +17,13 @@ type TreeData = {
     '../../app.component.css'
   ]
 })
+
+/**
+ * This class has a TreeModel to be displayed with IX elements, tree will have it's datatype from the TreeData interface. 
+ * The tree will have a root node, a sample node, if needed it can have also a sample child node and a sample grandchild node.
+ * 
+ */
+
 export class Infobox5Component {
   context: TreeContext = {};
   model: TreeModel<TreeData> = {

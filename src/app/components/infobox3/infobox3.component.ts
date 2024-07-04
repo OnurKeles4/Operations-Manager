@@ -5,6 +5,15 @@
 // import 'ag-grid-community/styles/ag-grid.css';
 // import 'ag-grid-community/styles/ag-theme-quartz.css';
 
+
+/*
+
+ WIP COMPONENT - NOT YET IMPLEMENTED ACCURATELY
+
+*/
+
+
+
  @Component({
    selector: 'app-infobox3',
    standalone: true,

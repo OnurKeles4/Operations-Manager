@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IxModule } from '@siemens/ix-angular';
-import { TreeContext, TreeModel } from '@siemens/ix';
 
 
 @Component({

@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { IxModule } from '@siemens/ix-angular';
-import { Infobox2Component } from '../infobox2/infobox2.component';
 import { SharedDataService } from '../shared.service';
 
 

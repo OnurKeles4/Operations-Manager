@@ -1,63 +1,10 @@
-
-.logo {
-    position: relative;
-    display: block;
-    width: 200px;
-    height: 100px;
-    overflow: hidden;
-    /* background-color: red; */
-}
-.hidden-header {
-
-position: fixed;
-display: block;
-top: 0px; /* Adjust based on header height */                                   /*WIP*/
-height: 50px;
-left: 0;
-width: 100%;
-background-color: #0cc;
-color: white;
-transition: top 1s;
-z-index: 1000; /* Ensure the header is above other content */
-}
-.hidden-header:hover {
-top: 0px;
-}
-.hidden-logo {
-position:relative; 
-display: block;
-top: 30px; 
-right: -250px;
-transition: top 1s;
-}
-.hidden-logo:hover ~ .hidden-header {               /* WIP */
-top: 0px;
-} 
-.hidden-header nav ul {
-list-style-type: none;
-padding: 0;
-margin: 0;
-display: flex;
-justify-content: space-around;
-}
-.hidden-header ul li {
-padding: 15px;
-} 
-.hidden-header ul li a {
-color: white;
-text-decoration: none;
-font-size: 20px;
-padding: 10px;
-}
-
-/*CARRY ALL OF THE POSITIONING RELATED COMPONENTS STYLES TO THIS FILE*/
-
 ix-application-header {
     font-size: 19px;
     font-weight: bold;
 }
 
 ix-menu {
+    /*position: fixed;*/                        /*CONSIDER TO MAKE IT FIXED POSITION*/
     height: 100vh;
 }
 
