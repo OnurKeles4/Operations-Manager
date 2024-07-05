@@ -1,8 +1,14 @@
 <!-- The AG Grid component -->
-<!-- <ag-grid-angular
-[rowData]="rowData"
-[columnDefs]="colDefs" /> -->
-<p class="infobox3"> THIS IS A GRAPH</p>
+<div class="content" style="width: 100%; height: 100%;">
+  <!-- The AG Grid component, with Dimensions, CSS Theme, Row Data, and Column Definition -->
+  <ag-grid-angular
+      style="width: 100%; height: 100%;"
+      [class]="themeClass"
+      [rowData]="rowData"
+      [columnDefs]="colDefs"
+      [defaultColDef]="defaultColDef"
+  />
+</div>
 <!-- <table class="table table-striped">
   <thead>
     <tr>

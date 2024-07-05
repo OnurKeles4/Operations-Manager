@@ -12,7 +12,7 @@ import { SharedDataService } from '../shared.service';
   styleUrl: './tabs.component.css'
 })
 export class TabsComponent {
-  selectedTab = 1;
+  selectedTab = 0;
 
   changeTab(tabIndex: number) {
     this.selectedTab = tabIndex;

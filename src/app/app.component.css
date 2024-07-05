@@ -7,7 +7,7 @@ ix-menu {
     position: fixed;                        /*CONSIDER TO MAKE IT FIXED POSITION*/
     padding-top: 2.8%;
     height: 100vh;
-    
+    background-color: #283236;
 }
 
 .breadcrumb {
