@@ -4,13 +4,15 @@ ix-application-header {
 }
 
 ix-menu {
-    /*position: fixed;*/                        /*CONSIDER TO MAKE IT FIXED POSITION*/
+    position: fixed;                        /*CONSIDER TO MAKE IT FIXED POSITION*/
+    padding-top: 2.8%;
     height: 100vh;
+    
 }
 
 .breadcrumb {
     padding: 10px;
-    padding-left: 50px;
+    padding-left: 5%;
         
 }
 

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { IxModule } from '@siemens/ix-angular';
 
 /*
@@ -8,7 +9,7 @@ with the click event and send it to the shared service to change the number of t
 @Component({
   selector: 'app-breadcrumb',
   standalone: true,
-  imports: [IxModule],
+  imports: [RouterModule, IxModule],
   templateUrl: 'breadcrumb.component.html',
   styleUrl: 'breadcrumb.component.css'
 })

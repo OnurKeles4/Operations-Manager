@@ -11,8 +11,8 @@ import { TabsComponent } from '../../components/tabs/tabs.component';
   standalone: true,
   imports: [IxModule, Infobox1Component, Infobox2Component,
     Infobox3Component, Infobox4Component, TabsComponent],
-  templateUrl: './menu.component.html',
-  styleUrl: './menu.component.css'
+  templateUrl: './home.component.html',
+  styleUrl: './home.component.css'
 })
 export class MenuComponent{
   

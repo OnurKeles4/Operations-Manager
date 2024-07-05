@@ -12,3 +12,6 @@ ix-menu {
 display: flex;
 flex-direction: column;
 }
+.header {
+    padding-left: 5%;
+}
