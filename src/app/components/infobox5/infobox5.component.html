@@ -1,7 +1,7 @@
 <!-- This HTML is a tree display. Item must have a name and icon, it might have description or child(s) 
   All of the tree elements can be expended by "Expend Tree" button. -->
 
-<div class="example">
+<div class="tree">
   <ix-button
     id="expand"
     ghost
@@ -16,13 +16,30 @@ Expand Tree
     [renderItem]="treeItem"> </ix-tree>
   <ng-template #treeItem let-item>
     <div class="align-items-center">
-      
+      <span class="name">
       <ix-icon [name]="item.icon" size="16" class="me-2"></ix-icon>
       {{ item.name }}
-      <br>
+    </span>
       <span class="desc">
       {{ item.description ?? ''}}
       </span>
     </div>
   </ng-template>
+</div>
+
+<hr class="hr">
+
+<div class="event">
+    <div class="sortbtn">
+    <ix-button (click)="sortProducts()">
+    <ix-icon name={{sortIcon}}></ix-icon> <span class="txtbtn"> Sort Asc </span> </ix-button>
+    </div>
+    <div class="infobox1">
+    <ix-event-list compact *ngFor="let info of tempResultArray">
+  <ix-event-list-item color="color-primary">
+    <ix-icon name={{info.data.icon}} size="16" class="me-2"></ix-icon>
+    {{info.data.name}}
+  </ix-event-list-item>
+</ix-event-list>
+</div>
 </div>

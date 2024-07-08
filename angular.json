@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "test2": {
+    "test4": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/test2",
+            "outputPath": "dist/test4",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -25,6 +25,8 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/ag-grid-community/styles/ag-grid.css",
+  "node_modules/ag-grid-community/styles/ag-theme-alpine.css",
               "src/styles.css"
             ],
             "scripts": [],
@@ -62,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "test2:build:production"
+              "buildTarget": "test4:build:production"
             },
             "development": {
-              "buildTarget": "test2:build:development"
+              "buildTarget": "test4:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -73,7 +75,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "test2:build"
+            "buildTarget": "test4:build"
           }
         },
         "test": {

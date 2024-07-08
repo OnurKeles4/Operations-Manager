@@ -1,59 +1,60 @@
-// import { AgGridAngular } from "ag-grid-angular";
-// import { ColDef } from "ag-grid-community";
-// import "ag-grid-community/styles/ag-grid.css";
-// import "ag-grid-community/styles/ag-theme-quartz.css";
-// import { Component } from "@angular/core";
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { Component, Inject, OnInit, PLATFORM_ID, ViewEncapsulation } from '@angular/core';
+import { AgGridModule } from 'ag-grid-angular';
+import { ColDef } from 'ag-grid-community';
+/* Core Data Grid CSS */
+import 'ag-grid-community/styles/ag-grid.css';
+/* Quartz Theme Specific CSS */
+import 'ag-grid-community/styles/ag-theme-quartz.css';
+// import a from '../../../assets/mock_ticketsystem_data.json';
 
-// // Row Data Interface
-// interface IRow {
-//   make: string;
-//   model: string;
-//   price: number;
-//   electric: boolean;
-// }
 
-// @Component({
-//   standalone: true,
-//   imports: [AgGridAngular],
-//   selector: "app-aggrid",
-//   template: `
-//     <div class="content" style="width: 100%; height: 100%;">
-//       <!-- The AG Grid component, with Dimensions, CSS Theme, Row Data, and Column Definition -->
-//       <ag-grid-angular
-//         style="width: 100%; height: 100%;"
-//         [class]="themeClass"
-//         [rowData]="rowData"
-//         [columnDefs]="colDefs"
-//         [defaultColDef]="defaultColDef"
-//       />
-//     </div>
-//   `,
-// })
-// export class AGGgridComponent {
-
-  
-//   themeClass =
-//     "ag-theme-quartz-dark";
-
-//   // Row Data: The data to be displayed.
-//   rowData: IRow[] = [
+@Component({
+  selector: 'app-agggrid',
+  standalone: true,
+  imports: [CommonModule, AgGridModule],
+  templateUrl: './aggrid.component.html',
+  styleUrls: ['./aggrid.component.css'],
+                                                    //encapsulation: ViewEncapsulation.None  // Add this line
+})
+export class AggGridComponent {
+  isBrowser: boolean;
+  url: string = '../../../assets/mock_ticketsystem_data.json';
+  employeeData: any;
+//   rowData = [
 //     { make: "Tesla", model: "Model Y", price: 64950, electric: true },
 //     { make: "Ford", model: "F-Series", price: 33850, electric: false },
 //     { make: "Toyota", model: "Corolla", price: 29600, electric: false },
-//     { make: "Mercedes", model: "EQA", price: 48890, electric: true },
-//     { make: "Fiat", model: "500", price: 15774, electric: false },
-//     { make: "Nissan", model: "Juke", price: 20675, electric: false },
 //   ];
+ 
+  // Column Definitions: Defines the columns to be displayed.
+  colDefs: ColDef[] = [
+    { field: "customer.id" },
+    { field: "customer.firstname" },
+    { field: "customer.lastname" },
+    { field: "customer.email" },
+    { field: "customer.ticketno" }
+  ];
 
-//   // Column Definitions: Defines & controls grid columns.
-//   colDefs: ColDef<IRow>[] = [
-//     { field: "make" },
-//     { field: "model" },
-//     { field: "price" },
-//     { field: "electric" },
-//   ];
+  
+  defaultColDef: ColDef = {
+    sortable: true,
+    filter: true
+  };
+  public clickTest() {
+    console.log(this.employeeData);
+  console.log(this.employeeData);
+  console.log(this.colDefs);
+}
 
-//   defaultColDef: ColDef = {
-//     flex: 1,
-//   };
-// }
+constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+  this.isBrowser = isPlatformBrowser(this.platformId);
+}
+
+ngOnInit() {
+    fetch(this.url).then(res => res.json())
+    .then(json => {
+      this.employeeData = json;
+    });
+  }
+}

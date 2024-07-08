@@ -1,0 +1,23 @@
+.infobox3 {
+    width: 100%;
+    height: 32rem;
+    padding: 100px;
+    align-items: center;
+    background-color: #0cc;
+}
+
+.ag-theme-quartz .ag-cell {
+    font-size: 12px; /* Adjust the font size */
+    line-height: 20px; /* Adjust the line height */
+    padding: 4px; /* Adjust the cell padding */
+  }
+  
+  .ag-theme-quartz .ag-header-cell {
+    font-size: 12px; /* Adjust the header font size */
+    line-height: 20px; /* Adjust the header line height */
+    padding: 4px; /* Adjust the header cell padding */
+  }
+  
+  .ag-theme-quartz .ag-row {
+    height: 24px; /* Adjust the row height */
+  }

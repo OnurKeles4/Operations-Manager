@@ -1,1 +1,10 @@
-<p>aggrid works!</p>
+
+ <!-- <p>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+<button (click)="clickTest()">Data Test</button> -->
+<ag-grid-angular *ngIf="isBrowser"
+  style="height: 500px;"
+  class="ag-theme-quartz-dark"
+  [rowData]="employeeData"
+  [columnDefs]="colDefs"
+  [defaultColDef]="defaultColDef"
+></ag-grid-angular>

@@ -11,8 +11,7 @@ import { BreadCrumbComponent } from "./components/breadcrumb/breadcrumb.componen
     standalone: true,
     templateUrl:'./app.component.html',
     styleUrl: './app.component.css',
-    imports: [
-      RouterModule, IxModule, BreadCrumbComponent]
+    imports: [RouterModule, IxModule, BreadCrumbComponent ]
 })
 export class AppComponent {
   title = 'main-page';
