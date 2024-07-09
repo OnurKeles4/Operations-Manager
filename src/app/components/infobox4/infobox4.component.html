@@ -1,20 +1,74 @@
-<!-- This HTML is a different way to display elements of a possible graph, it also includes a search bar -->
+<ix-layout-grid class="layout">
+    <ix-row>
+      <ix-col>
+        <div class="notification">
+        <ix-icon name="about"></ix-icon> 
+        <span class="number">9</span>
+      </div>
+      <div class="notification">
+        <p class="text">All Sites</p>
+      </div>
+      </ix-col>
+      <ix-col>
+        <div class="notification">
+        <ix-icon name="check"></ix-icon> 
+        <span class="number">2</span>
+      </div>
+      <div class="notification">
+        <p class="text">Sites without events</p>
+      </div>
+      </ix-col>
+      <ix-col>
+        <div class="notification">
+        <ix-icon name="alarm"></ix-icon> 
+        <span class="number">6</span>
+      </div>
+      <div class="notification">
+        <p class="text">Sites with events</p>
+      </div>
+      </ix-col>
+      <ix-col>
+        <div class="notification">
+        <ix-icon name="certificate-exclamation"></ix-icon> 
+        <span class="number">1</span>
+      </div>
+      <div class="notification">
+        <p class="text">Disconnected sites</p>
+      </div>
+      </ix-col>
+      <ix-col>
+        <div class="notification">
+        <ix-icon name="tasks-open"></ix-icon> 
+        <span class="number">4</span>
+      </div>
+      <div><p class="text">Sites with pending updates</p></div>
+      </ix-col>
+    </ix-row>
+  </ix-layout-grid>
+<div class="chart-container">
 
-<ix-category-filter class="filter"
-      placeholder="Filter by"
-      [suggestions]="suggestions"
-    ></ix-category-filter>
+    <ag-charts *ngIf="isBrowser && isDataLoaded" [options]="options"  class="agchart"></ag-charts>
   
-<ix-event-list class="infobox4">
-  <ix-event-list-item color="color-primary">Text 1</ix-event-list-item>
-  <ix-event-list-item color="color-primary" 
-    >Text 2</ix-event-list-item
-  >
-  <ix-event-list-item color="color-primary">Text 3</ix-event-list-item>
-  <ix-event-list-item color="color-primary">Text 4</ix-event-list-item>
-  <ix-event-list-item color="color-primary">Text 5</ix-event-list-item>
-  <ix-event-list-item color="color-primary">Text 6</ix-event-list-item>
-  <ix-event-list-item color="color-primary">Text 7</ix-event-list-item>
-  <ix-event-list-item color="color-primary">Text 8</ix-event-list-item>
-</ix-event-list>
-
+    <div class="icons-container">
+        <div class="icons">
+            <i class="fa-regular fa-face-smile" style="color: rgb(43, 255, 43);"></i> 
+            <span class="text">  
+                <h4>{{feeling1}} good</h4>
+                <p> good comfort score</p>
+            </span> 
+        </div>
+        <div class="icons">
+            <i class="fa-regular fa-face-meh" style="color: rgb(167, 167, 167);"></i> 
+            <span class="text">  
+                <h4>{{feeling2}} average</h4>
+                <p> average comfort score</p>
+            </span> 
+        </div>
+        <div class="icons">
+            <i class="fa-regular fa-face-frown" style="color: rgb(255, 68, 68);"></i> 
+            <span class="text">  
+                <h4>{{feeling3}} bad</h4>
+                <p> good comfort score</p>
+            </span> 
+        </div>
+  </div>

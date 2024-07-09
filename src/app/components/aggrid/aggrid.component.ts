@@ -1,5 +1,6 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Component, Inject, OnInit, PLATFORM_ID, ViewEncapsulation } from '@angular/core';
+import { IxModule } from '@siemens/ix-angular';
 import { AgGridModule } from 'ag-grid-angular';
 import { ColDef } from 'ag-grid-community';
 /* Core Data Grid CSS */
@@ -12,7 +13,7 @@ import 'ag-grid-community/styles/ag-theme-quartz.css';
 @Component({
   selector: 'app-agggrid',
   standalone: true,
-  imports: [CommonModule, AgGridModule],
+  imports: [CommonModule, AgGridModule, IxModule],
   templateUrl: './aggrid.component.html',
   styleUrls: ['./aggrid.component.css'],
                                                     //encapsulation: ViewEncapsulation.None  // Add this line
@@ -20,7 +21,12 @@ import 'ag-grid-community/styles/ag-theme-quartz.css';
 export class AggGridComponent {
   isBrowser: boolean;
   url: string = '../../../assets/mock_ticketsystem_data.json';
-  employeeData: any;
+  customerData: any;
+  selectedCustomer: any;
+  selectedCustomerTicket: any;
+  selectedCustomerfirstname: any;
+  selectedCustomerlastname: any;
+  selectedCustomeremail: any;
 //   rowData = [
 //     { make: "Tesla", model: "Model Y", price: 64950, electric: true },
 //     { make: "Ford", model: "F-Series", price: 33850, electric: false },
@@ -42,8 +48,8 @@ export class AggGridComponent {
     filter: true
   };
   public clickTest() {
-    console.log(this.employeeData);
-  console.log(this.employeeData);
+    console.log(this.customerData);
+  console.log(this.customerData);
   console.log(this.colDefs);
 }
 
@@ -54,7 +60,25 @@ constructor(@Inject(PLATFORM_ID) private platformId: Object) {
 ngOnInit() {
     fetch(this.url).then(res => res.json())
     .then(json => {
-      this.employeeData = json;
+      this.customerData = json;
+      this.selectedCustomer = this.customerData[0].customer;
+      this.selectedCustomerTicket = this.customerData[0].customer.ticketno;
+      this.selectedCustomerfirstname = this.customerData[0].customer.firstname;
+      this.selectedCustomerlastname = this.customerData[0].customer.lastname;
+      this.selectedCustomeremail = this.customerData[0].customer.email;
+      console.log(this.selectedCustomer);
     });
   }
+
+changeCustomer(event: any) {
+  console.log("Customer changed");
+  this.selectedCustomer = event.data.customer;
+  console.log(this.selectedCustomer);  
+
+  this.selectedCustomerTicket = event.data.customer.ticketno;
+  this.selectedCustomerfirstname = event.data.customer.firstname;
+  this.selectedCustomerlastname = event.data.customer.lastname;
+  this.selectedCustomeremail = event.data.customer.email;
+  //this.selectedCustomer = event.data.customer.ticketno;
+}
 }

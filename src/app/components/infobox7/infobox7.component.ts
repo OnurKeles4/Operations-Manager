@@ -20,6 +20,7 @@ type TreeData = {
 })
 //////////////////////////////////////////////////////////////////////////// CONSIDER CARRYING THIS COMPONENT INTO INFBOX 5, and getting tree values
 // from there instead of trying to passing the tree data from shared service, it is not working currently.
+/// OLD COMMENT ?? (9th July 2024)
 export class Infobox7Component implements OnInit, OnDestroy{
 
   context: TreeContext = {};

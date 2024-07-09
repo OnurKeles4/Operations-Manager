@@ -1,10 +1,41 @@
 
  <!-- <p>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
 <button (click)="clickTest()">Data Test</button> -->
+<div class="container">
+<div class="row">
+<div class="col-md-4">
 <ag-grid-angular *ngIf="isBrowser"
   style="height: 500px;"
   class="ag-theme-quartz-dark"
-  [rowData]="employeeData"
+  [rowData]="customerData"
   [columnDefs]="colDefs"
   [defaultColDef]="defaultColDef"
+  (rowClicked)="changeCustomer($event)"
 ></ag-grid-angular>
+</div>
+<div class="col-md-8">
+<div class="container">
+  <div class="basic">
+    <div style="display: flex;">
+  <ix-avatar image="https://www.gravatar.com/avatar/00000000000000000000000000000000"></ix-avatar>
+    <div class="basic_info">
+      <p class="status">Status</p>
+      <p class="text"> {{selectedCustomerTicket}} </p>
+    </div>
+    </div>
+  </div>
+    <div class="detail">
+      <div class="row">
+      <div class="col-md-6">
+      <p class="text"> {{selectedCustomerfirstname}} {{selectedCustomerlastname}} </p>
+      <p class="text">  {{selectedCustomeremail}} </p>
+    </div>
+    <div class="col-md-6">
+      <p class="text"> source</p>
+    </div>
+  </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>

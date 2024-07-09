@@ -3,3 +3,25 @@
     width: 100%
 }
 
+.text {
+    position: relative;
+    display: flex;
+    color: d1d1d1;
+}
+
+.container .basic, .detail {
+    background-color: #2d2d2d;
+    padding: 10px;
+}
+
+.container .basic .text, .status {
+    margin-left: 10px;
+}
+
+.container .basic .status {
+    font-size: 10px;
+}
+
+.container .basic .text {
+    font-size: 14px;
+}

@@ -3,3 +3,14 @@
     width: 100%
 }
 
+.number {
+    position: relative;
+
+    margin-left: 8px;
+    top: -6px;
+}
+
+.notification {
+    align-items: left;
+    font-size: 11px;
+}
